@@ -1,4 +1,4 @@
-(function() {
+(function($) {
 	"use strict";
 
 	var arr = [
@@ -63,6 +63,11 @@
 			in: document
 		},
 		{
+			name: 'Presentation API',
+			event: 'presentation',
+			in: window.navigator
+		},
+		{
 			name: 'Proximity API',
 			event: 'ondeviceproximity',
 			in: window
@@ -78,6 +83,11 @@
 			in: window
 		},
 		{
+			name: 'Standby API',
+			event: 'wakeLock',
+			in: window.navigator
+		},
+		{
 			name: 'User Timing API',
 			event: 'mark',
 			in: window.performance
@@ -85,6 +95,11 @@
 		{
 			name: 'Vibration API',
 			event: 'vibrate',
+			in: window.navigator
+		},
+		{
+			name: 'Web Alarms API',
+			event: 'alarms',
 			in: window.navigator
 		},
 		{
@@ -102,13 +117,9 @@
 
 	for (var i = 0; i < arr.length; i++) {
 		var c = 'no';
-		console.log('===========');
-		console.log(arr[i].in);
-		//console.log(arr[i].in[arr[i].event]);
-		console.log( arr[i].in.hasOwnProperty(arr[i].event) );
 		if (arr[i].event in arr[i].in) {
 			c = 'yes';
 		}
 		$('body').append('<section class="' + c + '">' + arr[i].name + '</section>');
 	}
-}());
+}(jQuery));
