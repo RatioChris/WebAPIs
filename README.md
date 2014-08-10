@@ -1,4 +1,4 @@
 # Web APIs
-##
+## Check which Web APIs are supported by your browser.
 
-[view demo](https://rawgit.com/RatioChris/WebAPIs/master/index.html)
+[view](https://rawgit.com/RatioChris/WebAPIs/master/index.html)

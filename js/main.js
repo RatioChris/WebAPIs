@@ -1,125 +1,138 @@
 (function($) {
 	"use strict";
 
-	var arr = [
+	var pre = ["webkit", "moz", "ms", "o"];
+	var api = [
 		{
 			name: 'Ambient Light API',
-			event: 'ondevicelight',
+			attr: 'ondevicelight',
 			in: window
 		},
 		{
 			name: 'Battery Status API',
-			event: 'battery',
+			attr: 'battery',
 			in: window.navigator
 		},
 		{
 			name: 'Class List API',
-			event: 'classList',
+			attr: 'classList',
 			in: document.createElement("span")
 		},
 		{
 			name: 'Compass Needs Calibration',
-			event: 'oncompassneedscalibration',
+			attr: 'oncompassneedscalibration',
 			in: window
 		},
 		{
 			name: 'Dataset API',
-			event: 'dataset',
+			attr: 'dataset',
 			in: document.createElement("span")
 		},
 		{
-			name: 'Device Orientation API',
-			event: 'DeviceOrientationEvent',
+			name: 'Device Motion API',
+			attr: 'DeviceMotionEvent',
 			in: window
 		},
 		{
-			name: 'Device Motion API',
-			event: 'DeviceMotionEvent',
+			name: 'Device Orientation API',
+			attr: 'DeviceOrientationEvent',
 			in: window
 		},
 		{
 			name: 'Geolocation API',
-			event: 'geolocation',
+			attr: 'geolocation',
 			in: window.navigator
 		},
 		{
 			name: 'Get User Media API',
-			event: 'getUserMedia',
+			attr: 'getUserMedia',
 			in: window.navigator
 		},
 		{
 			name: 'High Resolution Time API',
-			event: 'now',
+			attr: 'now',
 			in: window.performance
 		},
 		{
 			name: 'Network Information API',
-			event: 'connection',
+			attr: 'connection',
 			in: window.navigator
 		},
 		{
 			name: 'Page Visibility API',
-			event: 'hidden',
+			attr: 'hidden',
 			in: document
 		},
 		{
 			name: 'Presentation API',
-			event: 'presentation',
+			attr: 'presentation',
 			in: window.navigator
 		},
 		{
 			name: 'Proximity API',
-			event: 'ondeviceproximity',
+			attr: 'ondeviceproximity',
 			in: window
 		},
 		{
 			name: 'Resource Timing API',
-			event: 'getEntriesByType',
+			attr: 'getEntriesByType',
 			in: window.performance
 		},
 		{
 			name: 'Speech Synthesis API',
-			event: 'SpeechSynthesisUtterance',
+			attr: 'SpeechSynthesisUtterance',
 			in: window
 		},
 		{
 			name: 'Standby API',
-			event: 'wakeLock',
+			attr: 'wakeLock',
 			in: window.navigator
 		},
 		{
 			name: 'User Timing API',
-			event: 'mark',
+			attr: 'mark',
 			in: window.performance
 		},
 		{
 			name: 'Vibration API',
-			event: 'vibrate',
+			attr: 'vibrate',
 			in: window.navigator
 		},
 		{
 			name: 'Web Alarms API',
-			event: 'alarms',
+			attr: 'alarms',
 			in: window.navigator
 		},
 		{
 			name: 'Web Notification API',
-			event: 'Notification',
+			attr: 'Notification',
 			in: window
 		},
 		{
 			name: 'Web Speech API',
-			event: 'SpeechRecognition',
+			attr: 'SpeechRecognition',
 			in: window
 		}
 	];
 
 
-	for (var i = 0; i < arr.length; i++) {
-		var c = 'no';
-		if (arr[i].event in arr[i].in) {
+	for (var i = 0; i < api.length; i++) {
+		var a = api[i],
+			u = a.attr,
+			v = '',
+			c = 'no';
+		if (a.attr in a.in) {
 			c = 'yes';
+		} else {
+			for (var j = 0; j < pre.length; j++) {
+				var n = pre[j] + a.attr.charAt(0).toUpperCase() + a.attr.substring(1);
+				if (n in a.in) {
+					c = 'kinda';
+					v = n;
+					break;
+				}
+			}
 		}
-		$('body').append('<section class="' + c + '">' + arr[i].name + '</section>');
+		$('body').append('<section class="' + c + '"><span>' + api[i].name + '</span><span>' + u + '</span><span>' + v + '</span></section>');
 	}
 }(jQuery));

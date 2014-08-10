@@ -3,16 +3,29 @@ html {
 	font-family: sans-serif;
 	color: #000;
 }
-html, body {
-	height: 100%;
-}
 section {
 	padding: 5px;
 	margin-bottom: 1px;
 }
+
 .yes {
 	background-color: rgba(0,128,0,.5);
 }
 .no {
 	background-color: rgba(255,0,0,.5);
+}
+.kinda {
+	background-color: rgba(255,255,0,.5);
+}
+
+span {
+	display: inline-block;
+	width: 33%;
+}
+span:nth-of-type(2) {
+	font-family: monospace;
+}
+span:nth-of-type(3) {
+	font-family: monospace;
+	font-style: italic;
 }
