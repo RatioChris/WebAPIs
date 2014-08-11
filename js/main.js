@@ -4,17 +4,17 @@
 	var pre = ["webkit", "moz", "ms", "o"];
 	var api = [
 		{
-			name: 'Ambient Light API',
+			name: 'Ambient Light',
 			attr: 'ondevicelight',
 			in: window
 		},
 		{
-			name: 'Battery Status API',
+			name: 'Battery Status',
 			attr: 'battery',
 			in: window.navigator
 		},
 		{
-			name: 'Class List API',
+			name: 'Class List',
 			attr: 'classList',
 			in: document.createElement("span")
 		},
@@ -24,92 +24,92 @@
 			in: window
 		},
 		{
-			name: 'Dataset API',
+			name: 'Dataset',
 			attr: 'dataset',
 			in: document.createElement("span")
 		},
 		{
-			name: 'Device Motion API',
+			name: 'Device Motion',
 			attr: 'DeviceMotionEvent',
 			in: window
 		},
 		{
-			name: 'Device Orientation API',
+			name: 'Device Orientation',
 			attr: 'DeviceOrientationEvent',
 			in: window
 		},
 		{
-			name: 'Geolocation API',
+			name: 'Geolocation',
 			attr: 'geolocation',
 			in: window.navigator
 		},
 		{
-			name: 'Get User Media API',
+			name: 'Get User Media',
 			attr: 'getUserMedia',
 			in: window.navigator
 		},
 		{
-			name: 'High Resolution Time API',
+			name: 'High Resolution Time',
 			attr: 'now',
 			in: window.performance
 		},
 		{
-			name: 'Network Information API',
+			name: 'Network Information',
 			attr: 'connection',
 			in: window.navigator
 		},
 		{
-			name: 'Page Visibility API',
+			name: 'Page Visibility',
 			attr: 'hidden',
 			in: document
 		},
 		{
-			name: 'Presentation API',
+			name: 'Presentation',
 			attr: 'presentation',
 			in: window.navigator
 		},
 		{
-			name: 'Proximity API',
+			name: 'Proximity',
 			attr: 'ondeviceproximity',
 			in: window
 		},
 		{
-			name: 'Resource Timing API',
+			name: 'Resource Timing',
 			attr: 'getEntriesByType',
 			in: window.performance
 		},
 		{
-			name: 'Speech Synthesis API',
+			name: 'Speech Synthesis',
 			attr: 'SpeechSynthesisUtterance',
 			in: window
 		},
 		{
-			name: 'Standby API',
+			name: 'Standby',
 			attr: 'wakeLock',
 			in: window.navigator
 		},
 		{
-			name: 'User Timing API',
+			name: 'User Timing',
 			attr: 'mark',
 			in: window.performance
 		},
 		{
-			name: 'Vibration API',
+			name: 'Vibration',
 			attr: 'vibrate',
 			in: window.navigator
 		},
 		{
-			name: 'Web Alarms API',
+			name: 'Web Alarms',
 			attr: 'alarms',
 			in: window.navigator
 		},
 		{
-			name: 'Web Notification API',
+			name: 'Web Notification',
 			attr: 'Notification',
 			in: window
 		},
 		{
-			name: 'Web Speech API',
+			name: 'Web Speech',
 			attr: 'SpeechRecognition',
 			in: window
 		}
