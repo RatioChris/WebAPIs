@@ -1,0 +1,14 @@
+html {
+	background: #000;
+	font-family: sans-serif;
+	color: #fff;
+}
+html, body {
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+}
+h3 {
+	text-align: center;
+	line-height: 100vh;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ambient Light API</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/news.css">
+</head>
+
+<body>
+<article>
+	<h1>Headline</h1>
+
+	<p>Lorem ipsum dolor sit amet, vim an audire honestatis consectetuer. Te has solum utamur legimus, cum tamquam officiis insolens id, ea aeterno vivendum quo. Sea illum voluptatibus ei, has viris audire ea. Forensibus contentiones nec ea. Ex solum suscipit vim, noster sanctus fierent quo et, vel nullam essent accusata eu. Eam cetero bonorum ei, molestie mandamus constituto ex vim. Graeci scriptorem his cu.</p>
+	<p>Recteque erroribus accusamus id cum, quod graecis persecuti in est. At eum impetus deseruisse, ne justo iudico qui. Ornatus detraxit urbanitas mea at. Ut pro error possit, viris complectitur vituperatoribus eu qui, in est mollis accusata platonem. Ex sanctus dolorum ceteros eum, eos in dicant nominati. Consul adolescens in per.</p>
+	<p>Unum aliquando sed ne. Id sit error consectetuer. Tollit legimus cum et, pri adhuc simul tation eu. Reformidans voluptatibus mel id. Quas nusquam eum eu. Pro cu brute laudem, nec et enim ancillae noluisse.</p>
+	<p>Qui ex dicat utamur epicuri, offendit concludaturque vix no. Cibo oporteat sed ad, id electram vulputate adolescens duo. Vocent aeterno labores nec id, ius modus assueverit an. Saperet ancillae reformidans eu eum, illud saepe nusquam est ad. Agam iuvaret bonorum ne sed, id vim ancillae suavitate dissentiet.</p>
+	<p>Petentium molestiae ex pri, vidisse feugiat qui cu, vix ne tantas eripuit. Sed ne decore apeirian, exerci delectus interesset mea id. Id quis graece laboramus eam, id zril sensibus assentior eos. Id prima praesent voluptatibus per. Timeam appareat neglegentur ex sed.</p>
+</article>
+
+<script>
+	(function() {
+		'use strict';
+
+		if (!('ondevicelight' in window)) {
+			document.querySelector('h3').innerText = 'Ambient Light API not supported';
+		}
+
+		var init = function() {
+			var body = document.querySelector('body'),
+				val = document.querySelector('h1');
+
+			window.addEventListener('devicelight', function(e) {
+				val.innerHTML = Math.round(e.value) + ' lux';
+
+				if (e.value > 150) {
+					body.className = 'bright';
+				} else if (e.value > 100) {
+					body.className = 'normal';
+				} else if (e.value > 50) {
+					body.className = 'dim';
+				} else {
+					body.className = 'dark';
+				}
+			});
+		}
+
+		window.addEventListener('DOMContentLoaded', init, true);
+	}());
+</script>
+</body>
+</html>
