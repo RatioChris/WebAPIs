@@ -2,7 +2,8 @@
 	"use strict";
 
 	if (!('ondeviceproximity' in window)) {
-		document.querySelector('h3').innerText = 'Device Proximity API not supported';
+		document.querySelector('body').innerHTML = '<h3>Proximity API not supported</h3>';
+		return;
 	}
 
 	var init = function() {

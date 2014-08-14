@@ -2,7 +2,8 @@
 	'use strict';
 
 	if (!('ondevicelight' in window)) {
-		document.querySelector('h3').innerText = 'Ambient Light API not supported';
+		document.querySelector('h3').innerHTML = 'Ambient Light API not supported';
+		return;
 	}
 
 	var init = function() {
