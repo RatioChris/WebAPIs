@@ -79,6 +79,11 @@
 			in: window.performance
 		},
 		{
+			name: 'Screen Orientation',
+			attr: 'orientation',
+			in: window.screen
+		},
+		{
 			name: 'Speech Synthesis',
 			attr: 'SpeechSynthesisUtterance',
 			in: window
